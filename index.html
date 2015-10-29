@@ -10,5 +10,41 @@
     <section id="content">
 
     </section>
+    <a href="https://soundcloud.com/mason-cos" id="x"><img id="y" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSmtgylqMy7v32plONaUoeWUS_ygsipFaRDW3N7Kofk2GhtQGkr" /></a>
+    <canvas id="canvas" width="500" height="500" style="border: 1px solid black"></canvas>
+    <script type="text/javascript">
+
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+
+
+    function randomNum() {
+      return Math.random();
+    }
+
+    function randomColor() {
+   var red = Math.floor(Math.random() * 255);
+   var blue = Math.floor(Math.random() * 255);
+   var green = Math.floor(Math.random() * 255);
+   var color = 'rgb(' + red + ',' + blue + ',' + green + ')';
+   return color;
+  }
+
+
+    function randomBars() {
+      for(i = 0; i<10;i++) {
+        context.fillStyle = randomColor;
+        context.fillRect(100, 100, 100, 100);
+        context.beginPath();
+        context.moveTo(randomNum()*500, randomNum()*500);
+        context.lineTo(randomNum()*500, randomNum()*500);
+        context.lineWidth = 40;
+        context.strokeStyle = randomColor();
+        context.stroke();
+      }
+    }
+    randomBars();
+
+    </script>
   </body>
 </html>
